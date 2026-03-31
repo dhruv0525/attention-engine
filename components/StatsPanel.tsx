@@ -17,7 +17,7 @@ export default function StatsPanel() {
   }, []);
 
   return (
-    <div className="fixed top-4 right-4 bg-black text-white p-4 rounded-lg text-sm w-64 z-50">
+    <div className="fixed top-4 right-4 bg-black/80 backdrop-blur-xl text-green-400 font-mono p-4 rounded-xl text-xs w-64 z-50 border border-green-500/20 shadow-[0_0_20px_rgba(34,197,94,0.2)]">
       <h2 className="font-bold mb-1">📊 Stats</h2>
       <p className="mb-1 text-xs font-mono uppercase text-gray-400">Mode: <span className={mode === 'ethical' ? 'text-green-400' : 'text-red-400'}>{mode}</span></p>
       <p className="mb-4 text-xs font-mono text-gray-400">Attention Damage: {(getAttentionScore() / 1000).toFixed(2)}s avg</p>

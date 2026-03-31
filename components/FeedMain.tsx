@@ -125,19 +125,27 @@ export default function Feed() {
   }, []);
 
   return (
-    <div className="flex justify-center bg-black min-h-screen">
+    <div className="flex justify-center bg-black min-h-screen relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_70%)] pointer-events-none" />
       <div className="w-full max-w-lg px-4 py-6">
         
         {/* Title */}
-        <h1 className="text-white text-xl font-semibold mb-4">
-          Attention Feed
-        </h1>
+        <div className="mb-6">
+          <h1 className="text-white text-3xl font-bold mb-2 tracking-tight">
+            Attention Engine
+          </h1>
+          <p className="text-gray-400 text-sm">
+            Adaptive system optimizing your attention in real-time
+          </p>
+        </div>
 
         <div className="flex gap-2 mb-4">
           <button
             onClick={() => setMode("manipulative")}
-            className={`px-3 py-1 rounded transition-colors ${
-              mode === "manipulative" ? "bg-red-500 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+            className={`px-4 py-1 rounded-full text-sm transition ${
+              mode === "manipulative"
+                ? "bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.6)] text-white"
+                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
             }`}
           >
             Manipulative
@@ -145,8 +153,10 @@ export default function Feed() {
 
           <button
             onClick={() => setMode("ethical")}
-            className={`px-3 py-1 rounded transition-colors ${
-              mode === "ethical" ? "bg-green-500 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+            className={`px-4 py-1 rounded-full text-sm transition ${
+              mode === "ethical"
+                ? "bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.6)] text-white"
+                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
             }`}
           >
             Ethical
@@ -203,8 +213,8 @@ export default function Feed() {
             .map((post) => (
             <div
               key={post.id}
-              className={`snap-start transition-all duration-300 ${
-                highlightPost === post.id ? "ring-2 ring-yellow-400 ring-offset-4 ring-offset-black scale-[1.02]" : ""
+              className={`snap-start relative transition-all duration-300 rounded-xl ${
+                highlightPost === post.id ? "ring-2 ring-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.6)] z-10" : ""
               }`}
             >
               <FeedItem post={post} />

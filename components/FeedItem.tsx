@@ -63,7 +63,7 @@ export default function FeedItem({ post }: FeedCardProps) {
     <Card
       ref={cardRef}
       onClick={handleClick}
-      className="cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20"
+      className="cursor-pointer bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
     >
       <div className="aspect-video w-full bg-muted relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
